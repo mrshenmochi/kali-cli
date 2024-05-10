@@ -1,0 +1,18 @@
+{
+  "name": "kali-cli",
+  "version": "0.0.1",
+  "description": "Simplify system commands in Kali Linux with intuitive console interfaces.",
+  "type": "module",
+  "bin": {
+    "k-update": "./update.js"
+  },
+  "keywords": [
+    "kali",
+    "cli"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "coinp": "^0.0.1"
+  }
+}

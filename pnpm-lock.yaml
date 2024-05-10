@@ -1,0 +1,22 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      coinp:
+        specifier: ^0.0.1
+        version: 0.0.1
+
+packages:
+
+  coinp@0.0.1:
+    resolution: {integrity: sha512-CUL/7EZk7USfwoPRudCV72hXs6q08sIakAtPmGaf47UW/v12aTzhkw8Zqw7lUqP0rz7SqCeFT/HnOVwnbkVLsA==}
+
+snapshots:
+
+  coinp@0.0.1: {}

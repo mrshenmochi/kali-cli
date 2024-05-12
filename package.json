@@ -8,7 +8,8 @@
     "url": "https://github.com/sercrac07/kali-cli"
   },
   "bin": {
-    "k-update": "./update.js"
+    "k-update": "./update.js",
+    "k-fping": "./fping.js"
   },
   "keywords": [
     "kali",
@@ -18,6 +19,6 @@
   "author": "sercrac07",
   "license": "MIT",
   "dependencies": {
-    "coinp": "^0.3.2"
+    "coinp": "^0.4.0"
   }
 }

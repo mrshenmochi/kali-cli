@@ -17,3 +17,11 @@ Simplify system updates with a single command. Executes `apt-get update` followe
 ```bash
 k-update
 ```
+
+## Fping
+
+Discover networks and devices effortlessly. Executes the `fping` command for network and device discovery.
+
+```bash
+k-fping
+```

@@ -40,6 +40,8 @@ if (action === 'net') {
 
     netLoader.end(`Scan completed in ${diffSeconds} second${diffSeconds !== 1 ? 's' : ''}`)
 
+    coinp.info(`Command executed: fping -q -a -g ${net}`)
+
     const hosts = error.stdout.toString().split('\n')
     hosts.pop()
 
@@ -70,6 +72,8 @@ if (action === 'net') {
 
     ipLoader.end(`Scan completed in ${diffSeconds} second${diffSeconds !== 1 ? 's' : ''}`)
 
+    coinp.info(`Command executed: fping ${ip}`)
+
     coinp.outro(`${ip} is active`)
   } catch (error) {
     const endTime = new Date()
@@ -78,6 +82,8 @@ if (action === 'net') {
     const diffSeconds = Math.floor(diffTime / 1000)
 
     ipLoader.end(`Scan completed in ${diffSeconds} second${diffSeconds !== 1 ? 's' : ''}`)
+
+    coinp.info(`Command executed: fping ${ip}`)
 
     coinp.outro(`${ip} isn't active`)
   }

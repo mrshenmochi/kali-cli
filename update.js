@@ -19,6 +19,8 @@ else {
   execSync('apt-get upgrade -y')
   updateLoader.end('System updated')
 
+  coinp.info('Command executed: apt-get update && apt-get upgrade -y')
+
   const endTime = new Date()
 
   const diffTime = Math.abs(endTime - startTime)

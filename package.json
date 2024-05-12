@@ -1,18 +1,23 @@
 {
   "name": "kali-cli",
-  "version": "0.0.1",
   "description": "Simplify system commands in Kali Linux with intuitive console interfaces.",
+  "version": "0.0.1",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sercrac07/kali-cli"
+  },
   "bin": {
     "k-update": "./update.js"
   },
   "keywords": [
     "kali",
+    "linux",
     "cli"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "sercrac07",
+  "license": "MIT",
   "dependencies": {
-    "coinp": "^0.0.1"
+    "coinp": "^0.3.2"
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "kali-cli",
   "description": "Simplify system commands in Kali Linux with intuitive console interfaces.",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "type": "module",
   "repository": {
     "type": "git",
@@ -9,7 +9,8 @@
   },
   "bin": {
     "k-update": "./update.js",
-    "k-fping": "./fping.js"
+    "k-fping": "./fping.js",
+    "k-nmap": "./nmap.js"
   },
   "keywords": [
     "kali",

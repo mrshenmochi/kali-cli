@@ -8,7 +8,7 @@ const netRegex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|
 
 coinp.intro('fping command')
 
-const action = await coinp.list({
+const action = await coinp.select({
   message: 'What action do you want to do?',
   choices: [
     { label: 'Discover net', value: 'net' },
@@ -16,10 +16,14 @@ const action = await coinp.list({
   ],
 })
 
+const currentIp = execSync("ip -4 addr show eth0 | grep -oP '(?<=inet\\s)\\d+(\\.\\d+){3}'")
+  .toString()
+  .replace(/(\r\n|\n|\r)/gm, '')
+
 if (action === 'net') {
   const net = await coinp.text({
     message: 'What network do you want to discover?',
-    placeholder: '192.168.1.0/24',
+    placeholder: `${currentIp}/24`,
     verify: value => {
       if (!netRegex.test(value)) return 'You must specify a valid network IP'
     },
@@ -51,7 +55,7 @@ if (action === 'net') {
 } else {
   const ip = await coinp.text({
     message: 'What IP do you want to detect?',
-    placeholder: '192.168.1.10',
+    placeholder: `${currentIp}`,
     verify: value => {
       if (!ipRegex.test(value)) return 'You must specify a valid IP'
     },
@@ -62,29 +66,23 @@ if (action === 'net') {
   const ipLoader = coinp.loader('Detecting IP')
   ipLoader.start()
 
+  let success
+
   try {
     execSync(`fping ${ip}`).toString()
-
-    const endTime = new Date()
-
-    const diffTime = Math.abs(endTime - startTime)
-    const diffSeconds = Math.floor(diffTime / 1000)
-
-    ipLoader.end(`Scan completed in ${diffSeconds} second${diffSeconds !== 1 ? 's' : ''}`)
-
-    coinp.info(`Command executed: fping ${ip}`)
-
-    coinp.outro(`${ip} is active`)
+    success = true
   } catch (error) {
-    const endTime = new Date()
-
-    const diffTime = Math.abs(endTime - startTime)
-    const diffSeconds = Math.floor(diffTime / 1000)
-
-    ipLoader.end(`Scan completed in ${diffSeconds} second${diffSeconds !== 1 ? 's' : ''}`)
-
-    coinp.info(`Command executed: fping ${ip}`)
-
-    coinp.outro(`${ip} isn't active`)
+    success = false
   }
+
+  const endTime = new Date()
+
+  const diffTime = Math.abs(endTime - startTime)
+  const diffSeconds = Math.floor(diffTime / 1000)
+
+  ipLoader.end(`Scan completed in ${diffSeconds} second${diffSeconds !== 1 ? 's' : ''}`)
+
+  coinp.info(`Command executed: fping ${ip}`)
+
+  coinp.outro(`${ip} ${success ? 'is active' : "isn't active"}`)
 }

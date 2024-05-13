@@ -19,6 +19,6 @@
   "author": "sercrac07",
   "license": "MIT",
   "dependencies": {
-    "coinp": "^0.4.0"
+    "coinp": "^1.0.0"
   }
 }

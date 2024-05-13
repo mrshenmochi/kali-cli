@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       coinp:
-        specifier: ^0.4.0
-        version: 0.4.0
+        specifier: ^1.0.0
+        version: 1.0.0
 
 packages:
 
-  coinp@0.4.0:
-    resolution: {integrity: sha512-o0+TBE3lpno1SwsNC1WxsdPMQKnAH1J0zcAemoS2o/WY9y0BahqFLWW6P01ko5uFS1L4OIBWEUcD0plmwbFqdQ==}
+  coinp@1.0.0:
+    resolution: {integrity: sha512-78LNmnXDjaeMtjffXcEP+nBNYPBDj26qo/K5WYbsJqHrf3MLMNUq9Hws9bXVXivlQ/s85teIUHCiX/5gR7mJGA==}
 
 snapshots:
 
-  coinp@0.4.0: {}
+  coinp@1.0.0: {}

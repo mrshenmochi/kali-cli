@@ -52,7 +52,7 @@ if (action === 'net') {
     if (hosts.length === 0) coinp.outro('No hosts detected')
     else coinp.outro(...hosts)
   }
-} else {
+} else if (action === 'host') {
   const ip = await coinp.text({
     message: 'What IP do you want to detect?',
     placeholder: `${currentIp}`,

@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 
 import * as coinp from 'coinp'
+import * as tablifier from 'tablifier'
 import { execSync } from 'node:child_process'
 
 const ipRegex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/g
@@ -29,6 +30,8 @@ const ip = await coinp.text({
   },
 })
 
+const table = new tablifier.Table('Port', 'State', 'Service')
+
 if (action === 'fast') {
   const load = coinp.loader('Scanning host')
   const startTime = new Date()
@@ -47,7 +50,11 @@ if (action === 'fast') {
   if (!result) {
     coinp.outro('No port open')
   } else {
-    coinp.outro(...result)
+    result.forEach(res => {
+      table.addRow(...res.split(/\s+/g))
+    })
+
+    coinp.outro(...table.toString().split('\n'))
   }
 } else if (action === 'all') {
   const load = coinp.loader('Scanning host')
@@ -67,6 +74,10 @@ if (action === 'fast') {
   if (!result) {
     coinp.outro('No port open')
   } else {
-    coinp.outro(...result)
+    result.forEach(res => {
+      table.addRow(...res.split(/\s+/g))
+    })
+
+    coinp.outro(...table.toString().split('\n'))
   }
 }

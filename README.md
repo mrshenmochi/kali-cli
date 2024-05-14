@@ -4,11 +4,21 @@ KaliCLI is a powerful npm package designed to streamline and simplify command-li
 
 ## Instalation
 
-All commands are prefixed with "k-", so they should be executed like "k-update", for example.
+To download the package, clone the repository and navigate to the created folder.
 
 ```bash
-npm i -g kali-cli
+git clone https://github.com/sercrac07/kali-cli
+cd kali-cli
 ```
+
+Then, execute the following commands:
+
+```bash
+npm install
+npm install -g
+```
+
+This will install all necessary dependencies and globally install the package.
 
 ## Update
 
@@ -24,4 +34,12 @@ Discover networks and devices effortlessly. Executes the `fping` command for net
 
 ```bash
 k-fping
+```
+
+## Nmap
+
+Conduct host scanning effortlessly. Executes the "nmap" command to scan hosts.
+
+```bash
+k-Nmap
 ```

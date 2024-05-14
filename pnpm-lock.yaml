@@ -11,12 +11,20 @@ importers:
       coinp:
         specifier: ^1.0.0
         version: 1.0.0
+      tablifier:
+        specifier: ^1.0.1
+        version: 1.0.1
 
 packages:
 
   coinp@1.0.0:
     resolution: {integrity: sha512-78LNmnXDjaeMtjffXcEP+nBNYPBDj26qo/K5WYbsJqHrf3MLMNUq9Hws9bXVXivlQ/s85teIUHCiX/5gR7mJGA==}
 
+  tablifier@1.0.1:
+    resolution: {integrity: sha512-cAlAIrkdiNTUiijJ2ZNoifz+IJlvUE7RsKWnyw6pFZnftBld1daWc/pUM4G6aSph0HgrKOcSJodDtAVIryPXYg==}
+
 snapshots:
 
   coinp@1.0.0: {}
+
+  tablifier@1.0.1: {}

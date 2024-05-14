@@ -1,7 +1,7 @@
 {
   "name": "kali-cli",
   "description": "Simplify system commands in Kali Linux with intuitive console interfaces.",
-  "version": "0.2.0",
+  "version": "0.0.0",
   "type": "module",
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "author": "sercrac07",
   "license": "MIT",
   "dependencies": {
-    "coinp": "^1.0.0"
+    "coinp": "^1.0.0",
+    "tablifier": "^1.0.1"
   }
 }
